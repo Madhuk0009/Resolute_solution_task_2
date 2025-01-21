@@ -10,7 +10,7 @@ import { FormFieldService } from 'src/app/services/form-field.service';
 })
 export class FormBuilderComponent implements OnInit {
 
-  fieldTypes = ['text', 'textarea', 'dropdown', 'checkbox', 'radio'];
+  fieldTypes = ['text', 'textarea', 'dropdown', 'checkbox', 'radio','email','date','time','range','file','reset'];
   newField: FormField = this.resetNewField();
   fields: FormField[] = [];
   form: FormGroup = this.fb.group({});
