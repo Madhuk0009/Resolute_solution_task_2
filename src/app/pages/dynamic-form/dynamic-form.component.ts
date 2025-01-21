@@ -12,7 +12,7 @@ export class DynamicFormComponent implements OnInit {
   fields: FormField[] = [];
   form: FormGroup = this.fb.group({});
 
-  constructor(private fb: FormBuilder, private formFieldService: FormFieldService) {}
+  constructor(private fb: FormBuilder, private formFieldService: FormFieldService) { }
 
   ngOnInit() {
     this.formFieldService.fields$.subscribe((fields) => {
@@ -33,14 +33,15 @@ export class DynamicFormComponent implements OnInit {
     if (this.form.valid) {
       console.log('Form Data:', this.form.value);
       alert('Form Submitted Successfully!');
+      this.form.reset();
     } else {
       alert('Please fill out all required fields!');
     }
   }
 
-    // Remove field from form group and from the fields list
-    removeField(index: number) {
-      this.formFieldService.removeField(index);
-    }
+  // Remove field from form group and from the fields list
+  removeField(index: number) {
+    this.formFieldService.removeField(index);
+  }
 
 }

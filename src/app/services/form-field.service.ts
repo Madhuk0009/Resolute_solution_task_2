@@ -19,12 +19,7 @@ export class FormFieldService {
   removeField(index: number) {
     const currentFields = this.fields.getValue();
     currentFields.splice(index, 1);
-    return this.fields.next([...currentFields]);
+    this.fields.next([...currentFields]);
   }
-
-   // Set fields to update the observable
-  //  setFields(fields: FormField[]) {
-  //   this.fieldsSubject.next(fields);
-  // }
   
 }

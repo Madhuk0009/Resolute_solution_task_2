@@ -1,6 +1,6 @@
 <div class="dynamic-form">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div *ngFor="let field of fields; let i = index">
+    <div *ngFor="let field of fields; let i = index" class="formFields">
       <!-- Text Input -->
       <mat-form-field *ngIf="field.type === 'text'" appearance="fill" class="full-width">
         <mat-label>{{ field.label }}</mat-label>
@@ -39,7 +39,7 @@
       </div>
 
       <!-- Remove Button -->
-      <button mat-icon-button color="warn" (click)="removeField(i)">
+      <button mat-icon-button color="warn" class="btn-style" (click)="removeField(i)">
         <mat-icon>delete</mat-icon>
       </button>
     </div>
