@@ -1,6 +1,6 @@
 <div class="dynamic-form">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div *ngFor="let field of fields">
+    <div *ngFor="let field of fields; let i = index">
       <!-- Text Input -->
       <mat-form-field *ngIf="field.type === 'text'" appearance="fill" class="full-width">
         <mat-label>{{ field.label }}</mat-label>
@@ -22,7 +22,6 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      
   
       <!-- Checkbox -->
       <div *ngIf="field.type === 'checkbox'" class="checkbox-group">
@@ -38,9 +37,13 @@
           </mat-radio-button>
         </mat-radio-group>
       </div>
-      
+
+      <!-- Remove Button -->
+      <button mat-icon-button color="warn" (click)="removeField(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
     </div>
-  
+
     <button *ngIf="fields.length > 0" mat-raised-button color="primary" type="submit">Submit</button>
   </form>
 </div>

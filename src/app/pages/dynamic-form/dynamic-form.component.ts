@@ -38,4 +38,9 @@ export class DynamicFormComponent implements OnInit {
     }
   }
 
+    // Remove field from form group and from the fields list
+    removeField(index: number) {
+      this.formFieldService.removeField(index);
+    }
+
 }
