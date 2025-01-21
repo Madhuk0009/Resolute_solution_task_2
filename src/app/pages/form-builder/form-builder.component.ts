@@ -10,12 +10,27 @@ import { FormFieldService } from 'src/app/services/form-field.service';
 })
 export class FormBuilderComponent implements OnInit {
 
-  fieldTypes = ['text', 'textarea', 'dropdown', 'checkbox', 'radio','email','date','time','range','file','reset'];
+  fieldTypes = [
+    'text',
+    'textarea',
+    'dropdown',
+    'checkbox',
+    'radio',
+    'email',
+    'reset',
+    'file',
+    'time',
+    'number',
+    'date',
+  ];
   newField: FormField = this.resetNewField();
   fields: FormField[] = [];
   form: FormGroup = this.fb.group({});
 
-  constructor(private fb: FormBuilder, private formFieldService: FormFieldService) {}
+  constructor(
+    private fb: FormBuilder,
+    private formFieldService: FormFieldService
+  ) {}
 
   ngOnInit() {
     this.formFieldService.fields$.subscribe((fields) => {
@@ -41,7 +56,10 @@ export class FormBuilderComponent implements OnInit {
     }
 
     // For dropdown and radio, options must be provided
-    if ((this.newField.type === 'dropdown' || this.newField.type === 'radio') && (!this.newField.options || this.newField.options.length === 0)) {
+    if (
+      (this.newField.type === 'dropdown' || this.newField.type === 'radio') &&
+      (!this.newField.options || this.newField.options.length === 0)
+    ) {
       alert('Options are required for dropdown or radio fields!');
       return;
     }
@@ -57,6 +75,7 @@ export class FormBuilderComponent implements OnInit {
       label: '',
       placeholder: '',
       required: false,
+      email: false,
       options: [],
     };
   }
@@ -96,5 +115,4 @@ export class FormBuilderComponent implements OnInit {
       alert('Please fill out all required fields!');
     }
   }
-
 }

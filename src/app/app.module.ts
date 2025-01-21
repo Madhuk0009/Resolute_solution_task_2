@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormBuilderComponent } from './pages/form-builder/form-builder.component';
@@ -14,6 +13,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatSelectModule,
     MatIconModule,
     MatRadioModule,
+    MatSnackBarModule,
     MatCheckboxModule
   ],
   providers: [],
