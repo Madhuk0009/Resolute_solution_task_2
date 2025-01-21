@@ -1,27 +1,61 @@
-# AngularTest14
+Dynamic Form Builder and Form Handling
+This project contains two components that allow users to build dynamic forms and handle form submissions.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+Features:
+Dynamic Form Builder:
 
-## Development server
+Users can create forms by adding fields dynamically.
+Supports various field types: text, textarea, dropdown, checkbox, and radio button.
+Users can define the label, placeholder, and make a field required.
+Dropdown and radio button fields support options.
+Dynamic Form Handling:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The dynamic form is generated based on the fields defined in the builder.
+Validates form inputs before submission.
+Form data is logged upon successful submission.
+Components:
+1. FormBuilderComponent (Form Builder)
+Allows the creation of fields (text, textarea, dropdown, checkbox, radio).
+Users can input field types, labels, placeholders, and define required fields.
+Optionally add options for dropdown and radio fields.
+Fields are added dynamically to the form.
+Form fields are saved via a service (FormFieldService).
+2. DynamicFormComponent (Dynamic Form Display)
+Displays the form based on the fields created in the Form Builder.
+Supports form validation (required fields).
+On form submission, valid data is logged and an alert is shown.
+Technologies Used:
+Angular: For building the dynamic form and form builder.
+Angular Material: For form styling and UI components like input fields, checkboxes, dropdowns, and radio buttons.
+Installation:
+Clone the repository:
 
-## Code scaffolding
+bash
+Copy
+git clone <repository-url>
+cd <project-directory>
+Install the dependencies:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+bash
+Copy
+npm install
+Run the application:
 
-## Build
+bash
+Copy
+ng serve
+The application should now be available at http://localhost:4200.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+How to Use:
+Form Builder:
 
-## Running unit tests
+Select the type of field you want to add (text, textarea, dropdown, checkbox, or radio).
+Provide the label and placeholder for the field.
+Mark the field as required if necessary.
+For dropdown and radio fields, provide options separated by commas.
+Click Add Field to add the field to the form.
+Dynamic Form:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The form will dynamically update to include the fields added in the builder.
+Fill out the form and submit it.
+The form data will be logged in the console if it is valid.
